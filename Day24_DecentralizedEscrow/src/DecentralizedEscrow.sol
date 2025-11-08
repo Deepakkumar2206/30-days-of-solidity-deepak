@@ -110,22 +110,7 @@ contract AdvancedEscrowV1 {
 
     // ---- Constructor ------------------------------------------------------
 
-    /**
-     * @param _buyer            Buyer
-     * @param _seller           Seller
-     * @param _arbiter          Arbiter (DAO or EOA)
-     * @param _paymentToken     address(0) => ETH, else ERC20
-     * @param _totalAmount      Full escrow amount
-     * @param _mBps             Milestones in basis points (sum=10000)
-     * @param _mDeadlines       Epoch seconds for each milestone
-     * @param _feeRecipient     Platform fee receiver
-     * @param _feeBps           Platform fee bps (e.g. 200 = 2%)
-     * @param _dailyPenaltyBps  Late penalty per day (bps)
-     * @param _maxPenaltyBps    Max penalty cap (bps)
-     * @param _buyerGracePeriod Seconds after seller marks delivered
-     * @param _collateralNft    Optional NFT address (0 for none)
-     * @param _collateralId     Optional tokenId (0 for none)
-     */
+
     constructor(
         address _buyer,
         address _seller,
