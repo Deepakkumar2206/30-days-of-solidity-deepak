@@ -4,8 +4,6 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/// @title Simple UniswapV2-style AMM with LP ERC20
-/// @notice Constant product (x*y=k), 0.3% fee, LP mint/burn
 contract AutomatedMarketMaker is ERC20 {
     IERC20 public immutable tokenA;
     IERC20 public immutable tokenB;
@@ -34,9 +32,9 @@ contract AutomatedMarketMaker is ERC20 {
         owner = msg.sender;
     }
 
-    // ----------- Core AMM -----------
+    // Core AMM
 
-    /// @notice Add liquidity. Deposit both tokens; receive LP tokens.
+    /// Add liquidity. Deposit both tokens; receive LP tokens.
     function addLiquidity(uint256 amountA, uint256 amountB) external returns (uint256 liquidity) {
         require(amountA > 0 && amountB > 0, "amounts=0");
 
@@ -64,7 +62,7 @@ contract AutomatedMarketMaker is ERC20 {
         emit LiquidityAdded(msg.sender, amountA, amountB, liquidity);
     }
 
-    /// @notice Remove liquidity and receive both tokens back.
+    /// Remove liquidity and receive both tokens back.
     function removeLiquidity(uint256 liquidityToBurn) external returns (uint256 amountAOut, uint256 amountBOut) {
         require(liquidityToBurn > 0, "liq=0");
         require(balanceOf(msg.sender) >= liquidityToBurn, "not enough LP");
@@ -88,9 +86,9 @@ contract AutomatedMarketMaker is ERC20 {
         emit LiquidityRemoved(msg.sender, amountAOut, amountBOut, liquidityToBurn);
     }
 
-    /// @notice Swap Token A → Token B
-    /// @param amountAIn exact amount of A you send
-    /// @param minBOut minimum B you expect (slippage guard)
+    /// Swap Token A → Token B
+    /// amountAIn exact amount of A you send
+    /// minBOut minimum B you expect (slippage guard)
     function swapAforB(uint256 amountAIn, uint256 minBOut) external returns (uint256 amountBOut) {
         require(amountAIn > 0, "amount=0");
         require(reserveA > 0 && reserveB > 0, "no reserves");
@@ -112,7 +110,7 @@ contract AutomatedMarketMaker is ERC20 {
         emit TokensSwapped(msg.sender, address(tokenA), amountAIn, address(tokenB), amountBOut);
     }
 
-    /// @notice Swap Token B → Token A
+    /// Swap Token B → Token A
     function swapBforA(uint256 amountBIn, uint256 minAOut) external returns (uint256 amountAOut) {
         require(amountBIn > 0, "amount=0");
         require(reserveA > 0 && reserveB > 0, "no reserves");
@@ -131,12 +129,12 @@ contract AutomatedMarketMaker is ERC20 {
         emit TokensSwapped(msg.sender, address(tokenB), amountBIn, address(tokenA), amountAOut);
     }
 
-    /// @notice View current reserves (for UI/quotes)
+    /// View current reserves (for UI/quotes)
     function getReserves() external view returns (uint256, uint256) {
         return (reserveA, reserveB);
     }
 
-    // ----------- Utils -----------
+    // Utils
     function _sqrt(uint256 y) internal pure returns (uint256 z) {
         if (y == 0) return 0;
         uint256 x = (y / 2) + 1;
