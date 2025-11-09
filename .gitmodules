@@ -16,3 +16,9 @@
 [submodule "Day24_DecentralizedEscrow/lib/forge-std"]
 	path = Day24_DecentralizedEscrow/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "Day26_NFTmarketplace/lib/forge-std"]
+	path = Day26_NFTmarketplace/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "Day26_NFTmarketplace/lib/openzeppelin-contracts"]
+	path = Day26_NFTmarketplace/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
