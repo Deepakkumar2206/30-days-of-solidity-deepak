@@ -1,14 +1,4 @@
-# Foundry / Solidity build artifacts
+lib/
 out/
 cache/
-
-# Dependencies
-lib/
-
-# Node (if you add a frontend later)
-node_modules/
-
-# Env and secrets
-.env
-.env.*
-
+broadcast/
