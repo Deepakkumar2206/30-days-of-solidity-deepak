@@ -11,7 +11,7 @@ Tested everything thoroughly in Remix: deployment, approvals, listing, verificat
 
 ---
 
-## 2. What was Did
+## 2. Done task:
 
 * Created a new Foundry project for Day 26.
 * Added two contracts inside `src/`: SimpleNFT.sol and NFTMarketplace.sol.
@@ -174,7 +174,7 @@ Have added `lib/` to `.gitignore` to prevent future issues.
 
 ## 7. Summary
 
-A complete NFT trading mechanism using two interoperable contracts. I have implemented:
+A complete NFT trading mechanism using two interoperable contracts. Following were implemented:
 
 * ERC721 minting
 * Listing and royalty logic
@@ -184,5 +184,3 @@ A complete NFT trading mechanism using two interoperable contracts. I have imple
 ---
 
 # End of the Project.
-
-If you want modifications, more details, or a Day 26 explanation video script, tell me.
