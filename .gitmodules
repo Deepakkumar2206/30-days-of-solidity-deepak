@@ -37,3 +37,12 @@
 [submodule "Day29_StableCoins/lib/forge-std"]
 	path = Day29_StableCoins/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "Day30_MiniDex/lib/forge-std"]
+	path = Day30_MiniDex/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "Day30_MiniDex/lib/openzeppelin-contracts"]
+	path = Day30_MiniDex/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
