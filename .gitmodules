@@ -49,3 +49,6 @@
 [submodule "Day09_InjectiveBank/lib/forge-std"]
 	path = Day09_InjectiveBank/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "Day25_InjectiveCLOB/lib/forge-std"]
+	path = Day25_InjectiveCLOB/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
